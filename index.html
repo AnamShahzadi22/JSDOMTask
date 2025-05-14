@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Pratice</title>
+</head>
+<body>
+    <h1> Login Page</h1>
+    <form  id ="myform">
+        <label for="name" ><b>Username</b></label>
+
+         <input type="text" name="" id="name"  placeholder="Enter name">
+        <br>
+        <br>
+        <label for="pwd"><b>Password</b></label>
+        <input type="password" id="pwd" placeholder="Password">
+        <br>
+        <br>
+        <button  id="btn",type = "submit">Login</button>
+
+    </form>
+    
+</body>
+
+<script>
+    
+    
+   // let btn = document.getElementById('btn');
+    let form = document.getElementById('myform');
+    form.addEventListener('submit',function(event){
+        event.preventDefault(); 
+        let name = document.getElementById("name").value;
+      let pwd = document.getElementById("pwd").value;
+        if(name == ""|| pwd == ""){
+
+            alert('Please Enter name and password');
+        }else{
+            let value = Math.floor(((Math.random() * 10000000000) + 1));
+            document.cookie = "digit=" + value + ";";
+            if(document.cookie){
+            window.location.replace('home.html')}
+        alert(document.cookie)
+    }
+
+
+
+    })
+</script>
+</html>
